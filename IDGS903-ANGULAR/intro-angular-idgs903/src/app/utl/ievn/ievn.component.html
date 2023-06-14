@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table" *ngIf="alumnos.length">
+
+                <thead>
+                    <tr>
+                        <th>matricula</th>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>correo</th>
+                        <th>pago</th>
+                    </tr>
+                </thead>
+                <thbody>
+                    <tr *ngFor="let alumno of alumnos">
+                        <td>{{alumnos.matricula}}</td>
+                        <td>{{alumnos.nombre|uppercase}}</td>
+                        <td>{{alumnos.edad}}</td>
+                        <td>{{alumnos.correo}}</td>
+                        <td>{{alumnos.pago|currecy}}</td>
+                        <td><img [src]="alumno.foto" ></td>
+                    </tr>
+                    
+                </thbody>
+            </table>
+        </div>
+    </div>
+</div>
