@@ -1,28 +1,49 @@
-<div class="container">
+<div class="card">
 
-    <div class="row">
-        <div class="col-md-6">
+    <div class="card-header">
+        Lista Alumnos
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">filtar por:</div>
+            <div class="col-md-4">
+                <input [(ngModel)]="listFilter" name="filter" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Filtro:{{listFilter}}</h3>
+            </div>
+        </div>
+        <div class="table-responsive">
             <table class="table" *ngIf="alumnos.length">
-
                 <thead>
+
                     <tr>
+                        <button  (click)="showImagen()" class="btn btn-primary">mostrar imagenes </button>
                         <th>matricula</th>
                         <th>Nombre</th>
                         <th>Edad</th>
                         <th>correo</th>
                         <th>pago</th>
+                        <th>foto</th>
                     </tr>
                 </thead>
                 <thbody>
+
                     <tr *ngFor="let alumno of alumnos">
+                        <td>
+                            <img *ngIf="muestraImg" [src]="alumno.foto" [title]="alumno.nombre" [style.witdth.px]="image.witdth"
+                                [style.margin.px]="imageMargin"> </td>
                         <td>{{alumnos.matricula}}</td>
                         <td>{{alumnos.nombre|uppercase}}</td>
                         <td>{{alumnos.edad}}</td>
                         <td>{{alumnos.correo}}</td>
                         <td>{{alumnos.pago|currecy}}</td>
-                        <td><img [src]="alumno.foto" ></td>
+                        <td><img [src]="alumno.foto"></td>
                     </tr>
-                    
+
                 </thbody>
             </table>
         </div>
