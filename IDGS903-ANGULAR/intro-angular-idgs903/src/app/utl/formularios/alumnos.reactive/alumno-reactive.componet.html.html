@@ -1,0 +1,87 @@
+<div class="row">
+<div class="col-6">
+ <form (ngSubmit)="onSubmit()" [formGroup]="alumnoForm">
+  <div class="mb-4">
+    
+    <label for="" class="form-label">Matricula:</label>
+      <input type="text" class="form-control"  required formControlName="Matricula" id="Matricula" name="Matricula">
+<div *nif="alumnoForm.get('matricula')?.touched &&
+alumnoForm.get('matricula')?.errors?.['required']"
+  class="alert alert-danger">Error campo requerido  </div>
+
+  </div>
+  <div class="mb-4">
+    
+    <label for="" class="form-label">Nombre</label>
+      <input type="text" required formControlName="nombre" class="form-control" id="nombre" name="nombre">
+      <div *nif="alumnoForm.get('nombre')?.touched &&
+      alumnoForm.get('nombre')?.errors?.['required']"
+        class="alert alert-danger">Error campo requerido  </div>
+        <div *nif="alumnoForm.get('nombre')?.touched &&
+      alumnoForm.get('nombre')?.errors?.['minlength']"
+        class="alert alert-danger">el campo es mayor </div>
+    {{alumnoForm.get('nombre')?.errors?.['minLength']?.requiredLength}}caracteres </div>
+  </div>
+  <div class="mb-4">
+    
+    <label for="" class="form-label">edad</label>
+      <input type="number" required formControlName="edad" class="form-control" id="edad" name="edad">
+      <div *nif="alumnoForm.get('edad')?.touched &&
+      alumnoForm.get('edad')?.errors?.['required']"
+        class="alert alert-danger">Error campo requerido  </div>
+  </div>
+  <div class="mb-4">
+    
+    <label for="" class="form-label">correo</label>
+      <input type="numbr" required formControlName="correo" class="form-control" id="correo" name="correo">
+      <div *nif="alumnoForm.get('correo')?.touched &&
+      alumnoForm.get('correo')?.errors?.['required']"
+        class="alert alert-danger">Error campo requerido  </div>
+  </div>
+  <div class="mb-4">
+    
+    <label for="" class="form-label">pago</label>
+      <input type="numbr" class="form-control" id="matricula" name="matricula">
+    </label>
+  </div>
+  <div class="mb-4">
+    
+    <label for="" class="form-label">foto</label>
+      <input type="numbr" class="form-control" id="matricula" name="matricula">
+    </label>
+  </div>
+  <div class="mb-4">
+    
+    <label for="" class="form-label">calificacion</label>
+      <input type="numbr" class="form-control" id="matricula" name="matricula">
+    </label>
+  </div>
+  <div class="d-grid gap-2 col-4 float-end">
+    <button class="btn btn-info btn-lg" type="submit">Guardar</button>
+  </div>
+</form>
+
+<div class="col-6">
+  <table class="table table.responsive">
+    <thead>
+      <tr>
+        <th>Matricula</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Pago</th>
+        <th>Correo</th>
+        <th>matricula</th>
+      </tr>
+      <tr>
+        <th>{{Matricula}}</th>
+        <th>{{Nombre}}</th>
+        <th>{{Edad}}</th>
+        <th>{{Pago}}</th>
+        <th>{{Correo}}</th>
+        <th>{{matricula}}</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+</div>
+</div>

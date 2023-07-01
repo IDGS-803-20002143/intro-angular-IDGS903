@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { idgsComponent } from './utl/idgs.component';
 import { ievnComponent}from './utl/ievn.component';
-import { FormsModule}from '@angular/forms';
+import { FormsModule, ReactiveFormsModule}from '@angular/forms';
 import { SumaComponent } from './utl/formularios/suma/suma.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OperasModule } from './utl/formularios/operas/operas.module';
+import { AppRoutingModule } from './app.routing.module';
+import { AlumnoReactiveComponent } from './utl/formularios/alumnos.reactive/Alumno-Reactive.component';
 
 
 
@@ -19,7 +21,8 @@ import { OperasModule } from './utl/formularios/operas/operas.module';
     idgsComponent,
     ievnComponent,
     SumaComponent,
-    OperasBasComponent
+    OperasBasComponent,
+    AlumnoReactiveComponent
 
 
   ],
@@ -27,7 +30,9 @@ import { OperasModule } from './utl/formularios/operas/operas.module';
     BrowserModule,
     FormsModule
     BrowserAnimationsModule,
-    OperasModule
+    OperasModule,
+    ReactiveFormsModule,
+    AppRoutingModule
     
   ],
   providers: [],

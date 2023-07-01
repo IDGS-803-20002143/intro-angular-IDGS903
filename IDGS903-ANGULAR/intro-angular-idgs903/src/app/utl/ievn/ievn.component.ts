@@ -1,5 +1,5 @@
-mport { Component } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-ievn',
